@@ -1,4 +1,4 @@
-package com.ecommerce;
+package com.ecommerce.quickart.test;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

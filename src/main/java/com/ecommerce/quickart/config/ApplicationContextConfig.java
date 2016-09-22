@@ -17,6 +17,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import com.ecommerce.quickart.model.Category;
 import com.ecommerce.quickart.model.Product;
 import com.ecommerce.quickart.model.Supplier;
+import com.ecommerce.quickart.model.User;
+import com.ecommerce.quickart.model.UserDetails;
 
 @Configuration
 @ComponentScan("com.ecommerce.quickart.model")
@@ -41,6 +43,8 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClasses(Product.class);
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
+		sessionBuilder.addAnnotatedClass(User.class);
+		sessionBuilder.addAnnotatedClass(UserDetails.class);
 
 		return sessionBuilder.buildSessionFactory();
 	}

@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.ecommerce.quickart.model.Product;
 
 
-@Repository
+@Repository("productDao")
 @Transactional
 public class ProductDaoImpl implements ProductDao {
 	@Autowired

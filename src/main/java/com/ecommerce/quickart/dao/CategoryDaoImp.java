@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.ecommerce.quickart.model.Category;
-@Repository
+@Repository("categoryDao")
 @Transactional
 public class CategoryDaoImp implements CategoryDao{
 	@Autowired

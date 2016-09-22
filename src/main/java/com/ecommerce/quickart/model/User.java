@@ -6,12 +6,12 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name="USERCREDENTIAL")
+@Table(name="AUTHENTICATION")
 @Component
 public class User {
 	@Id
-	private String roleId ;
 	private String userId ;
+	private String roleId ;
 	private String password ;
 	
 	public String getRoleId() {

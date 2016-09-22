@@ -29,11 +29,20 @@ public class UserDetails {
 	private String password;
 	@NotEmpty
 	private String mobilenumber;
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	@Past(message = "Please enter valid date of birth!")
-	private Date birthDate;
-	private String country;
+	/*@DateTimeFormat(pattern = "YYYY/MM/DD")
+	@Past(message = "Please enter valid date of birth!")*/
+	private String dOB;
+	private String address;
 	private String gender;
+	private String roleId;
+	
+	
+	public String getRoleId() {
+		return roleId;
+	}
+	public void setRoleId(String rollId) {
+		this.roleId = rollId;
+	}
 	public String getUserId() {
 		return userId;
 	}
@@ -64,23 +73,25 @@ public class UserDetails {
 	public void setMobilenumber(String mobilenumber) {
 		this.mobilenumber = mobilenumber;
 	}
-	public Date getBirthDate() {
-		return birthDate;
-	}
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
-	public String getCountry() {
-		return country;
-	}
-	public void setCountry(String country) {
-		this.country = country;
-	}
+	
 	public String getGender() {
 		return gender;
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getdOB() {
+		return dOB;
+	}
+	public void setdOB(String dOB) {
+		this.dOB = dOB;
 	}
 
 }

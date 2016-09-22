@@ -3,12 +3,13 @@ package com.ecommerce.quickart.dao;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.ecommerce.quickart.model.User;
 
-@Repository
+@Repository("userDao")
 @Transactional
 public class UserDaoImp implements UserDao{
 	@Autowired
@@ -58,7 +59,8 @@ public class UserDaoImp implements UserDao{
 
 	public User getUser(String userId) {
 		String hql = "from usercredential where id = '" + userId + "'" ;
-		List<User> userList = sessionFactory.getCurrentSession().createQuery(hql).list();
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<User> userList = query.list();
 		if(userList == null){
 		 return null ;	
 		}

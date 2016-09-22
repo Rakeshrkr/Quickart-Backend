@@ -1,0 +1,17 @@
+com\ecommerce\quickart\config\ApplicationContextConfig.class
+com\ecommerce\quickart\model\User.class
+com\ecommerce\quickart\model\Category.class
+com\ecommerce\quickart\dao\ProductDaoImpl.class
+com\ecommerce\quickart\dao\UserDao.class
+com\ecommerce\quickart\dao\SupplierDao.class
+com\ecommerce\quickart\dao\SupplierDaoImp.class
+com\ecommerce\quickart\model\Product.class
+com\ecommerce\quickart\dao\CategoryDao.class
+com\ecommerce\quickart\dao\CategoryDaoImp.class
+com\ecommerce\quickart\dao\ProductDao.class
+com\ecommerce\quickart\dao\UserDetailsDaoImp.class
+com\ecommerce\quickart\util\ProductTest.class
+com\ecommerce\quickart\model\Supplier.class
+com\ecommerce\quickart\dao\UserDaoImp.class
+com\ecommerce\quickart\dao\UserDetailsDao.class
+com\ecommerce\quickart\model\UserDetails.class

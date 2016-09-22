@@ -1,0 +1,5 @@
+com\ecommerce\quickart\test\AppTest.class
+com\ecommerce\quickart\test\ProductTest.class
+com\ecommerce\quickart\test\CategoryTest.class
+com\ecommerce\quickart\test\SupplierTest.class
+com\ecommerce\quickart\test\UserTest.class

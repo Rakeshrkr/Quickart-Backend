@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.ecommerce.quickart.model.UserDetails;
 
-@Repository
+@Repository("userDetailsDao")
 @Transactional
 public class UserDetailsDaoImp implements UserDetailsDao{
 

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ecommerce.quickart.model.Supplier;
-@Repository
+@Repository("supplierDao")
 @Transactional
 public class SupplierDaoImp implements SupplierDao{
 	@Autowired
@@ -65,6 +65,4 @@ public class SupplierDaoImp implements SupplierDao{
 		return supplierList ;
 	}
 	
-	
-
 }
