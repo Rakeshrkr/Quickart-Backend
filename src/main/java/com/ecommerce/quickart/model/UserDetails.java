@@ -29,9 +29,9 @@ public class UserDetails {
 	private String password;
 	@NotEmpty
 	private String mobilenumber;
-	/*@DateTimeFormat(pattern = "YYYY/MM/DD")
-	@Past(message = "Please enter valid date of birth!")*/
-	private String dOB;
+	@DateTimeFormat(pattern = "YYYY-MM-DD")
+	@Past(message = "Please enter valid date of birth!")
+	private Date dOB;
 	private String address;
 	private String gender;
 	private String roleId;
@@ -87,11 +87,12 @@ public class UserDetails {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getdOB() {
+	public Date getdOB() {
 		return dOB;
 	}
-	public void setdOB(String dOB) {
+	public void setdOB(Date dOB) {
 		this.dOB = dOB;
 	}
+	
 
 }

@@ -3,6 +3,7 @@ package com.ecommerce.quickart.dao;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -54,8 +55,9 @@ public class CategoryDaoImp implements CategoryDao{
 	}
 
 	public Category getCategory(String categoryId) {
-		String hql = "from category where id = '" + categoryId + "'" ;
-		List<Category> categoryList = sessionFactory.getCurrentSession().createQuery(hql).list();
+		String hql = "from Category where categoryId = '" + categoryId + "'" ;
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Category> categoryList = query.list();
 		if(categoryList == null){
 		 return null ;	
 		}
@@ -65,7 +67,7 @@ public class CategoryDaoImp implements CategoryDao{
 
 	public List<Category> CategoryList() {
 		
-		String hql = "from category" ;
+		String hql = "from Category" ;
 		List<Category> categoryList = sessionFactory.getCurrentSession().createQuery(hql).list();
 		if(categoryList == null){
 		 return null ;	

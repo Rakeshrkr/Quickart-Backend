@@ -58,7 +58,7 @@ public class UserDaoImp implements UserDao{
 	}
 
 	public User getUser(String userId) {
-		String hql = "from usercredential where id = '" + userId + "'" ;
+		String hql = "from User where userId = '" + userId + "'" ;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		List<User> userList = query.list();
 		if(userList == null){
@@ -70,7 +70,7 @@ public class UserDaoImp implements UserDao{
 	}
 
 	public List<User> UserList() {
-		String hql = "from usercredential" ;
+		String hql = "from User" ;
 		List<User> userList = sessionFactory.getCurrentSession().createQuery(hql).list();
 		if(userList == null){
 		 return null ;	

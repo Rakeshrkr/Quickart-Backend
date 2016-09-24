@@ -3,6 +3,7 @@ package com.ecommerce.quickart.dao;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -55,8 +56,9 @@ public class UserDetailsDaoImp implements UserDetailsDao{
 	}
 
 	public UserDetails getUserDetails(String userId) {
-		String hql = "from userdetails where id = '" + userId + "'" ;
-		List<UserDetails> userdetailList = sessionFactory.getCurrentSession().createQuery(hql).list();
+		String hql = "from UserDetails where userId = '" + userId + "'" ;
+		Query query = sessionFactory.getCurrentSession().createQuery(hql) ;
+		List<UserDetails> userdetailList = query.list();
 		if(userdetailList == null){
 		 return null ;	
 		}
@@ -65,7 +67,7 @@ public class UserDetailsDaoImp implements UserDetailsDao{
 	}
 
 	public List<UserDetails> UserList() {
-		String hql = "from userdetails" ;
+		String hql = "from UserDetails" ;
 		List<UserDetails> userdetailList = sessionFactory.getCurrentSession().createQuery(hql).list();
 		if(userdetailList == null){
 		 return null ;	

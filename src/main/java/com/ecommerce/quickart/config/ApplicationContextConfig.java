@@ -31,6 +31,7 @@ public class ApplicationContextConfig {
 		dataSource.setUrl("jdbc:h2:tcp://localhost/~/quickart");
 		dataSource.setUsername("sa");
 		dataSource.setPassword("");
+		
 		return dataSource;
 	}
 
@@ -39,7 +40,8 @@ public class ApplicationContextConfig {
 	public SessionFactory getSessionFactory(DataSource dataSource) {
 
 		LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
-
+		sessionBuilder.addProperties(getHibernateProperties());
+		
 		sessionBuilder.addAnnotatedClasses(Product.class);
 		sessionBuilder.addAnnotatedClass(Category.class);
 		sessionBuilder.addAnnotatedClass(Supplier.class);
