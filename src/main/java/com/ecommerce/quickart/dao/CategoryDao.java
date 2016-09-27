@@ -7,8 +7,8 @@ import com.ecommerce.quickart.model.Category;
 public interface CategoryDao {
 	public boolean saveCategory(Category category);
 	public boolean updateCategory(Category category);
-	public boolean deleteCategory(String categoryId);
-	public Category getCategory(String categoryId);
+	public boolean deleteCategory(int categoryId);
+	public Category getCategory(int categoryId);
 	public List<Category> CategoryList();
 
 }

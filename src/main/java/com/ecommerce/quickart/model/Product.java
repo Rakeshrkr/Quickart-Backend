@@ -1,7 +1,10 @@
 package com.ecommerce.quickart.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
@@ -9,21 +12,37 @@ import org.springframework.stereotype.Component;
 @Table(name = "PRODUCT")
 @Component
 public class Product {
-	@Id
+	@Id 
 	private int productId;
 	private String productName;
-	private String categoryId;
-	private String supplierId;
 	private String description;
 	private int quantity;
 	private float price;
-
-	public String getSupplierId() {
-		return supplierId;
+	@ManyToOne
+	@JoinColumn(name="categoryId" , updatable =false , insertable=true, nullable =false)
+	private Category category ;
+	
+	@ManyToOne
+	@JoinColumn(name="supplierId" , updatable =false , insertable=true, nullable = false)
+	private Supplier supplier ;
+	
+	
+	public Supplier getSupplier() {
+		return supplier;
 	}
 
-	public void setSupplierId(String supplierId) {
-		this.supplierId = supplierId;
+	public void setSupplier(Supplier supplier) {
+		this.supplier = supplier;
+	}
+
+	
+	public Category getCategory() {
+		return category;
+	}
+
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 	public String getDescription() {
@@ -32,14 +51,6 @@ public class Product {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public String getCategoryId() {
-		return categoryId;
-	}
-
-	public void setCategoryId(String categoryId) {
-		this.categoryId = categoryId;
 	}
 
 	public int getProductId() {

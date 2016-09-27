@@ -34,11 +34,11 @@ public class ProductTestCase {
 	@Test
 	public void createProductTestCase() {
 
-		product.setSupplierId("suresh101");
-		product.setCategoryId("cloths501");
+		//.setSupplierId("suresh101");
+		//product.setCategoryId("cloths501");
 		product.setDescription("This is blue tshirt");
 		product.setPrice(1209);
-		product.setProductId(777);
+		product.setProductId(800);
 		product.setQuantity(6);
 		product.setProductName("tshirt XL");
 		Assert.assertEquals("Create Product", true, productDao.addProduct(product));
@@ -48,8 +48,8 @@ public class ProductTestCase {
 	@Test
 	public void updateProductTestCase() {
 
-		product.setSupplierId("suresh101");
-		product.setCategoryId("cloths501");
+		//product.setSupplierId("suresh101");
+		//product.setCategoryId("cloths501");
 		product.setDescription("This is blue tshirt");
 		product.setPrice(1209);
 		product.setProductId(777);

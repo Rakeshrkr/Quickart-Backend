@@ -31,30 +31,30 @@ public class CategoryTestCase {
     @Test
     public void createCategoryTestCase(){
     	
-    	category.setCategoryId("cloths501");
-    	category.setCategoryName("Tshirt");
-    	category.setDescription("This is new tshirt");
+    	category.setCategoryId(101);
+    	category.setCategoryName("Sofa");
+    	category.setDescription("This is new Sofa");
     	Assert.assertEquals("Create Category",true, categoryDao.saveCategory(category));
     	
     }
     @Test
     public void updateCategoryTestCase(){	
 
-    	category.setCategoryId("cloths301");
-    	category.setCategoryName("Shirt");
-    	category.setDescription("This is new tshirt");
+    	category.setCategoryId(101);
+    	category.setCategoryName("White Sofa");
+    	category.setDescription("This is new Sofa");
     	Assert.assertEquals("Update Category",true, categoryDao.updateCategory(category));
     	
     }
     @Test
     public void deleteCategoryTestCase(){
     	
-    	Assert.assertEquals("delete Category",true, categoryDao.deleteCategory("cloths101"));
+    	Assert.assertEquals("delete Category",true, categoryDao.deleteCategory(101));
     }
     @Test
     public void getCategoryTestCase(){
     	
-    	Assert.assertEquals("Get Category","Tshirt", categoryDao.getCategory("cloths501").getCategoryName());
+    	Assert.assertEquals("Get Category","Tshirt", categoryDao.getCategory(101).getCategoryName());
     }
     @Test
     public void listCategoryTestCase(){

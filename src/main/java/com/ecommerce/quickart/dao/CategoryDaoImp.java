@@ -42,7 +42,7 @@ public class CategoryDaoImp implements CategoryDao{
 		return true;
 	}
 
-	public boolean deleteCategory(String categoryId) {
+	public boolean deleteCategory(int categoryId) {
 		try{
 			sessionFactory.getCurrentSession().delete(getCategory(categoryId));
 		}
@@ -54,7 +54,7 @@ public class CategoryDaoImp implements CategoryDao{
 		return true;
 	}
 
-	public Category getCategory(String categoryId) {
+	public Category getCategory(int categoryId) {
 		String hql = "from Category where categoryId = '" + categoryId + "'" ;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		List<Category> categoryList = query.list();

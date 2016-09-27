@@ -1,7 +1,12 @@
 package com.ecommerce.quickart.model;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
@@ -10,15 +15,23 @@ import org.springframework.stereotype.Component;
 @Component
 public class Supplier {
 	@Id
-	private String supplierId ;
+	private int supplierId ;
 	private String supplierName ;
 	private String supplierAddress ;
 	
+	@OneToMany(mappedBy="supplier" , fetch=FetchType.EAGER)
+	private Set<Product> products ;
 	
-	public String getSupplierId() {
+	public Set<Product> getProducts() {
+		return products;
+	}
+	public void setProduct(Set<Product> products) {
+		this.products = products;
+	}
+	public int getSupplierId() {
 		return supplierId;
 	}
-	public void setSupplierId(String supplierId) {
+	public void setSupplierId(int supplierId) {
 		this.supplierId = supplierId;
 	}
 	public String getSupplierName() {

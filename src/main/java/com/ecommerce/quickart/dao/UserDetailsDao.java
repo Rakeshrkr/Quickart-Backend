@@ -8,6 +8,7 @@ public interface UserDetailsDao {
 	public boolean updateUserDetails(UserDetails userDetails);
 	public boolean deleteUserDetails(String userId);
 	public UserDetails getUserDetails(String userId);
+	public UserDetails isValidUser(String userId, String password);
 	public List<UserDetails> UserList();
 
 }

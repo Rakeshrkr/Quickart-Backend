@@ -34,7 +34,7 @@ public class SupplierDaoImp implements SupplierDao{
 			return true ;
 	}
 
-	public boolean deleteSupplier(String supplierId) {
+	public boolean deleteSupplier(int supplierId) {
 		try{
 			sessionFactory.getCurrentSession().delete(getSupplier(supplierId));
 			}
@@ -44,7 +44,7 @@ public class SupplierDaoImp implements SupplierDao{
 			return true ;
 	}
 
-	public Supplier getSupplier(String supplierId) {
+	public Supplier getSupplier(int supplierId) {
 		String hql = "from Supplier where supplierId = '" + supplierId + "'" ;
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		List<Supplier> supplierList = query.list();

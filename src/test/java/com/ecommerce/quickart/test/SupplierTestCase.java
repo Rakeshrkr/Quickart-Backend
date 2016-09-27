@@ -33,7 +33,7 @@ public class SupplierTestCase {
 	@Test
 	public void createSupplierTestCase() {
 
-		supplier.setSupplierId("suresh101");
+		supplier.setSupplierId(303);
 		supplier.setSupplierName("Suresh Goswami");
 		supplier.setSupplierAddress("Sikar, Rajasthan");
 		Assert.assertEquals("Create Supplier", true, supplierDao.saveSupplier(supplier));
@@ -43,7 +43,7 @@ public class SupplierTestCase {
 	@Test
 	public void updateCategoryTestCase() {
 
-		supplier.setSupplierId("Manoj101");
+		supplier.setSupplierId(303);
 		supplier.setSupplierName("Manoj");
 		supplier.setSupplierAddress("Sikar, Rajasthan");
 		Assert.assertEquals("Update Supplier", true, supplierDao.updateSupplier(supplier));
@@ -53,7 +53,7 @@ public class SupplierTestCase {
 	@Test
 	public void getSupplierTestCase() {
 
-		Assert.assertEquals("Get Supplier", "Samitha Singh", supplierDao.getSupplier("Samitha").getSupplierName());
+		Assert.assertEquals("Get Supplier", "Samitha Singh", supplierDao.getSupplier(303).getSupplierName());
 	}
 
 	@Test
@@ -65,7 +65,7 @@ public class SupplierTestCase {
 	@Test
 	public void deleteSupplierTestCase() {
 
-		Assert.assertEquals("delete Supplier", true, supplierDao.deleteSupplier("cloths101"));
+		Assert.assertEquals("delete Supplier", true, supplierDao.deleteSupplier(303));
 	}
 
 }
