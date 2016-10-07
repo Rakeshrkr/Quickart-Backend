@@ -17,26 +17,32 @@ import org.springframework.stereotype.Component;
 @Table(name="USERDETAILS")
 @Component
 public class UserDetails {
+	
+	// @Pattern(regexp="[^0-9]^", message = "Name can not contain digits.")
+	/*@Size(min = 3, max = 30, message = "Please enter a value for Name field between {2} and {1} character.")*/
+	/*@NotNull
+	@Email(message = "Please enter valid email address")*/
+	/*@Size(min = 3, max = 20, message = "Password must between 3 and 20 characters")*/
+	/*@Past(message = "Please enter valid date of birth!")*/
+	
+	
 	@Id
 	private String userId;
-	// @Pattern(regexp="[^0-9]^", message = "Name can not contain digits.")
-	@Size(min = 3, max = 30, message = "Please enter a value for Name field between {2} and {1} character.")
 	private String fullName;
-	@NotNull
-	@Email(message = "Please enter valid email address")
 	private String email;
-	@Size(min = 3, max = 20, message = "Password must between 3 and 20 characters")
 	private String password;
 	@NotEmpty
-	private String mobilenumber;
+	private String mobileNumber;
 	@DateTimeFormat(pattern = "YYYY-MM-DD")
-	@Past(message = "Please enter valid date of birth!")
 	private Date dOB;
 	private String address;
-	private String gender;
+	/*private String gender;*/
 	private String roleId;
 	
 	
+	public UserDetails() {
+		super();
+	}
 	public String getRoleId() {
 		return roleId;
 	}
@@ -67,19 +73,20 @@ public class UserDetails {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getMobilenumber() {
-		return mobilenumber;
-	}
-	public void setMobilenumber(String mobilenumber) {
-		this.mobilenumber = mobilenumber;
-	}
 	
-	public String getGender() {
+	
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+	/*public String getGender() {
 		return gender;
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
-	}
+	}*/
 
 	public String getAddress() {
 		return address;

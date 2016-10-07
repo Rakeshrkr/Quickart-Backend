@@ -47,6 +47,10 @@ public class Supplier {
 		this.supplierAddress = supplierAddress;
 	}
 	
+	@Override
+	public String toString() {	
+		return supplierName ;
+	}
 	
 
 }

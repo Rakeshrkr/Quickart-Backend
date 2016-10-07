@@ -12,5 +12,6 @@ public interface SupplierDao {
 	public boolean deleteSupplier(int supplierId);
 	public Supplier getSupplier(int supplierId);
 	public List<Supplier> SupplierList();
+	public Supplier getSupplierByName(String supplierName);
 
 }

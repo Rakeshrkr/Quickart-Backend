@@ -8,12 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.ecommerce.quickart.model.Category;
+
 @Repository("categoryDao")
 @Transactional
 public class CategoryDaoImp implements CategoryDao{
 	@Autowired
 	private SessionFactory sessionFactory ;
-
+	
 	public CategoryDaoImp(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
@@ -21,6 +22,8 @@ public class CategoryDaoImp implements CategoryDao{
 	public boolean saveCategory(Category category) {
 		try{
 			sessionFactory.getCurrentSession().save(category);
+			//String json = gson.toJson(category);
+			
 		}
 		catch(Exception exception)
 		{
@@ -69,11 +72,26 @@ public class CategoryDaoImp implements CategoryDao{
 		
 		String hql = "from Category" ;
 		List<Category> categoryList = sessionFactory.getCurrentSession().createQuery(hql).list();
+		
 		if(categoryList == null){
 		 return null ;	
 		}
 		else
 		return categoryList ;
 	}
+
+	public Category getCategoryByName(String categoryName) {
+		String hql = "from Category where categoryName = '" + categoryName + "'" ;
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Category> categoryList = query.list();
+		if(categoryList == null){
+		 return null ;	
+		}
+		else
+		return categoryList.get(0);
+		
+	}
+
+	
 
 }

@@ -1,12 +1,23 @@
 package com.ecommerce.quickart.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
+
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 @Table(name = "PRODUCT")
@@ -18,18 +29,22 @@ public class Product {
 	private String description;
 	private int quantity;
 	private float price;
-	@ManyToOne
-	@JoinColumn(name="categoryId" , updatable =false , insertable=true, nullable =false)
+	
+	
+	@ManyToOne(fetch=FetchType.EAGER,cascade = CascadeType.ALL)
+	@JoinColumn(name="categoryId" ,nullable= false )//,insertable=true ,updatable=false)
 	private Category category ;
 	
-	@ManyToOne
-	@JoinColumn(name="supplierId" , updatable =false , insertable=true, nullable = false)
+	
+	@ManyToOne(fetch=FetchType.EAGER,cascade = CascadeType.ALL)
+	@JoinColumn(name="supplierId" ,nullable= false)//,insertable=true ,updatable=false)
 	private Supplier supplier ;
 	
-	
+
 	public Supplier getSupplier() {
 		return supplier;
 	}
+
 
 	public void setSupplier(Supplier supplier) {
 		this.supplier = supplier;

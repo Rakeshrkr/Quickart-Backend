@@ -1,5 +1,11 @@
-com\ecommerce\quickart\test\AppTest.class
-com\ecommerce\quickart\test\ProductTest.class
+com\ecommerce\quickart\test\SupplierTestCase.class
+com\ecommerce\quickart\test\CategoryTestCase.class
+com\ecommerce\quickart\test\UserTestCase.class
+com\ecommerce\quickart\test\UserDetailsTestCase.class
 com\ecommerce\quickart\test\CategoryTest.class
 com\ecommerce\quickart\test\SupplierTest.class
+com\ecommerce\quickart\test\UserDetailsTest.class
+com\ecommerce\quickart\test\AppTest.class
+com\ecommerce\quickart\test\ProductTest.class
+com\ecommerce\quickart\test\ProductTestCase.class
 com\ecommerce\quickart\test\UserTest.class

@@ -1,13 +1,10 @@
 package com.ecommerce.quickart.model;
 
-import java.util.HashSet;
-import java.util.Set;
 
+import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import org.springframework.stereotype.Component;
@@ -49,6 +46,10 @@ public class Category {
 		this.description = description;
 	}
 	
-	
+	@Override
+	public String toString() {
+		
+		return categoryName;
+	}
 
 }

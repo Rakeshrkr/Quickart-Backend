@@ -7,13 +7,13 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.ecommerce.quickart.dao.ProductDao;
-import com.ecommerce.quickart.model.Product;
+//import com.ecommerce.quickart.dao.ProductDao;
+//import com.ecommerce.quickart.model.Product;
 
 import junit.framework.Assert;
 
 public class ProductTestCase {
-
+/*
 	@Autowired
 	AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 	@Autowired
@@ -76,5 +76,5 @@ public class ProductTestCase {
 
 		Assert.assertEquals("delete Product", true, productDao.deleteProduct(0));
 	}
-
+*/
 }

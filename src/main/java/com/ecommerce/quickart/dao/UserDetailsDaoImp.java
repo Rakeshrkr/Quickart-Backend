@@ -71,7 +71,7 @@ public class UserDetailsDaoImp implements UserDetailsDao {
 
 	public UserDetails isValidUser(String userId, String password) {
 		String hql = "from UserDetails where userId = " + "'" + userId + "'" + "and" 
-				+ "password = " + "'" + password+ "'";
+				+ " password = " + "'" + password+ "'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
 		List<UserDetails> list = (List<UserDetails>) query.list();

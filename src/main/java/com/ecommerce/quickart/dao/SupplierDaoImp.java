@@ -64,5 +64,16 @@ public class SupplierDaoImp implements SupplierDao{
 		}
 		return supplierList ;
 	}
+
+	public Supplier getSupplierByName(String supplierName) {
+		
+		String hql = "from Supplier where supplierName = '" + supplierName + "'" ;
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Supplier> supplierList = query.list();
+		if(supplierList == null){
+			return null ;
+		}
+		return supplierList.get(0);
+	}
 	
 }

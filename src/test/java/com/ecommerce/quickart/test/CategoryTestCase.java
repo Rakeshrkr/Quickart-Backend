@@ -1,18 +1,16 @@
 package com.ecommerce.quickart.test;
 
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 import com.ecommerce.quickart.dao.CategoryDao;
 import com.ecommerce.quickart.model.Category;
-
 import junit.framework.Assert;
 
 public class CategoryTestCase {
-    @Autowired
+   @Autowired
 	AnnotationConfigApplicationContext context ;
     @Autowired
     CategoryDao categoryDao ;

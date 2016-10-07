@@ -20,7 +20,7 @@ public class UserDetailsTest {
 		 
 		userDetails.setUserId("Mohit.kr");
 		userDetails.setEmail("Mohit.iitb@gmail.com");
-		userDetails.setMobilenumber("9967433830");
+		userDetails.setMobileNumber("9967433830");
 		Date date = null;
 		try {
 			date = new SimpleDateFormat("yyyy-MM-dd").parse("1995-10-01");
@@ -28,7 +28,7 @@ public class UserDetailsTest {
 			e.printStackTrace();
 		}
 		userDetails.setdOB(date);
-		userDetails.setGender("male");
+		//userDetails.setGender("male");
 		userDetails.setAddress("Powai, Mumbai");
 		userDetails.setFullName("Mohit Kumar Regar");
 		userDetails.setPassword("mohit123");

@@ -1,7 +1,5 @@
 package com.ecommerce.quickart.test;
 
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -44,7 +44,6 @@ public class ProductTest {
 
 		ProductDao productDao = (ProductDao) context.getBean("productDao");
 		Product product = (Product) context.getBean("product");
-		// ProductDao productDao1 = (ProductDao) context.getBean("productDao");
 		Product product1 = (Product) context.getBean("product");
 
 		product.setProductId(15);

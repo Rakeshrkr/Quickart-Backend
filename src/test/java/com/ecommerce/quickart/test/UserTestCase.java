@@ -7,14 +7,14 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-
+/*
 import com.ecommerce.quickart.dao.UserDao;
 import com.ecommerce.quickart.model.User;
-
+*/
 import junit.framework.Assert;
 
 public class UserTestCase {
-
+/*
 	@Autowired
 	AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 	@Autowired
@@ -63,6 +63,6 @@ public class UserTestCase {
 	public void deleteUserTestCase() {
 
 		Assert.assertEquals("delete User", true, userDao.deleteUser("subham.rs"));
-	}
+	}*/
 
 }
