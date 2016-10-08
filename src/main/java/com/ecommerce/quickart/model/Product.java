@@ -31,12 +31,12 @@ public class Product {
 	private float price;
 	
 	
-	@ManyToOne(fetch=FetchType.EAGER,cascade = CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.EAGER,cascade = CascadeType.PERSIST)
 	@JoinColumn(name="categoryId" ,nullable= false )//,insertable=true ,updatable=false)
 	private Category category ;
 	
 	
-	@ManyToOne(fetch=FetchType.EAGER,cascade = CascadeType.ALL)
+	@ManyToOne(fetch=FetchType.EAGER,cascade = CascadeType.PERSIST)
 	@JoinColumn(name="supplierId" ,nullable= false)//,insertable=true ,updatable=false)
 	private Supplier supplier ;
 	

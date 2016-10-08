@@ -19,7 +19,7 @@ public class Supplier {
 	private String supplierName ;
 	private String supplierAddress ;
 	
-	@OneToMany(mappedBy="supplier" , fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="supplier" , fetch=FetchType.EAGER,orphanRemoval=true)
 	private Set<Product> products ;
 	
 	public Set<Product> getProducts() {
