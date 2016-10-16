@@ -27,7 +27,7 @@ public class UserDetailsTest {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		userDetails.setdOB(date);
+		/*userDetails.setdOB(date);*/
 		//userDetails.setGender("male");
 		userDetails.setAddress("Powai, Mumbai");
 		userDetails.setFullName("Mohit Kumar Regar");

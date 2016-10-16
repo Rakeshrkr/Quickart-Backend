@@ -8,4 +8,5 @@ import com.ecommerce.quickart.model.Product;
 		 public boolean deleteProduct(int productId);
 		 public Product getProduct(int productId);
 		 public List<Product> getAllProduct();
+		 public List<Product> getProductsByCategoryId(int categoryId);
 }

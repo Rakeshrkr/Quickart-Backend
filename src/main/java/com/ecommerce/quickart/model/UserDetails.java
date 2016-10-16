@@ -1,5 +1,7 @@
 package com.ecommerce.quickart.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -33,10 +35,10 @@ public class UserDetails {
 	private String password;
 	@NotEmpty
 	private String mobileNumber;
-	@DateTimeFormat(pattern = "YYYY-MM-DD")
-	private Date dOB;
+	/*@DateTimeFormat(pattern = "YYYY-MM-DD")*/
+	private String dOB;
 	private String address;
-	/*private String gender;*/
+	private String gender;
 	private String roleId;
 	
 	
@@ -47,7 +49,7 @@ public class UserDetails {
 		return roleId;
 	}
 	public void setRoleId(String rollId) {
-		this.roleId = rollId;
+		this.roleId = "ROLE_USER";
 	}
 	public String getUserId() {
 		return userId;
@@ -81,12 +83,12 @@ public class UserDetails {
 	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
-	/*public String getGender() {
+	public String getGender() {
 		return gender;
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
-	}*/
+	}
 
 	public String getAddress() {
 		return address;
@@ -94,10 +96,11 @@ public class UserDetails {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public Date getdOB() {
+	
+	public String getdOB() {
 		return dOB;
 	}
-	public void setdOB(Date dOB) {
+	public void setdOB(String dOB) {
 		this.dOB = dOB;
 	}
 	

@@ -14,8 +14,13 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.ecommerce.quickart.model.BillingAddress;
+import com.ecommerce.quickart.model.CardDetails;
+import com.ecommerce.quickart.model.Cart;
 import com.ecommerce.quickart.model.Category;
+import com.ecommerce.quickart.model.Order;
 import com.ecommerce.quickart.model.Product;
+import com.ecommerce.quickart.model.ShippingAddress;
 import com.ecommerce.quickart.model.Supplier;
 import com.ecommerce.quickart.model.User;
 import com.ecommerce.quickart.model.UserDetails;
@@ -47,7 +52,11 @@ public class ApplicationContextConfig {
 		sessionBuilder.addAnnotatedClass(Supplier.class);
 		sessionBuilder.addAnnotatedClass(User.class);
 		sessionBuilder.addAnnotatedClass(UserDetails.class);
-
+		sessionBuilder.addAnnotatedClass(Cart.class);
+		sessionBuilder.addAnnotatedClass(BillingAddress.class);
+		sessionBuilder.addAnnotatedClass(ShippingAddress.class);
+		sessionBuilder.addAnnotatedClass(Order.class);
+		sessionBuilder.addAnnotatedClasses(CardDetails.class);
 		return sessionBuilder.buildSessionFactory();
 	}
 

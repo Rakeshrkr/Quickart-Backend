@@ -54,4 +54,12 @@ public class ProductDaoImpl implements ProductDao {
 		 List<Product> productList = query.list();
 		 return productList ;
 	}
+	
+	public List<Product> getProductsByCategoryId(int categoryId){
+		Query query = sessionFactory.getCurrentSession().createQuery("from Product where categoryid = "+ categoryId);
+		List<Product> productListFromCategoryId = query.list();
+		return productListFromCategoryId ;
+	}
+	
+	
 }

@@ -30,6 +30,9 @@ public class Product {
 	private int quantity;
 	private float price;
 	
+	@Transient
+	private MultipartFile image ;
+	
 	
 	@ManyToOne(fetch=FetchType.EAGER,cascade = CascadeType.PERSIST)
 	@JoinColumn(name="categoryId" ,nullable= false )//,insertable=true ,updatable=false)
@@ -104,4 +107,16 @@ public class Product {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+
+
+	public MultipartFile getImage() {
+		return image;
+	}
+
+
+	public void setImage(MultipartFile image) {
+		this.image = image;
+	}
+	
+	
 }
