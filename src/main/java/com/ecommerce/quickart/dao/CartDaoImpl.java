@@ -37,9 +37,10 @@ public class CartDaoImpl implements CartDao{
 
 	public void updateCart(String userId) {
 		Session session = sessionFactory.getCurrentSession();
-		String hql = "UPDATE Cart SET status = 'D' WHERE userId = '"+ userId + "' and status = 'N'";
+		String hql = "UPDATE Cart set status = 'D' where userId = '"+ userId + "' and status = 'N'";
 		Query query = session.createQuery(hql);
 		query.executeUpdate();
+		
 		
 	}
 
@@ -61,6 +62,18 @@ public class CartDaoImpl implements CartDao{
 
 	public Cart getCart(String userId, String productName) {
 		String hql = "from Cart where userId='" + userId + "' and productName='"+ productName + "'";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Cart> listCart = query.getResultList();
+		if (listCart != null && !listCart.isEmpty()) {
+			return listCart.get(0);
+		}
+
+		return null;
+		
+	}
+	
+	public Cart getCartByStatus(String userId) {
+		String hql = "from Cart where userId='" + userId + "' and status='N'";
 		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		List<Cart> listCart = query.getResultList();
 		if (listCart != null && !listCart.isEmpty()) {
