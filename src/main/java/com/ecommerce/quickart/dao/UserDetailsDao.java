@@ -12,3 +12,6 @@ public interface UserDetailsDao {
 	public List<UserDetails> UserList();
 
 }
+=================4/11/2016
+Web services
+Restful web service
